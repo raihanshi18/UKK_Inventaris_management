@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ItemsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -12,4 +13,5 @@ Route::post('me', [AuthController::class, 'me']);
 
 Route::middleware(['auth:api'])->group(function () {
     Route::apiResource('categories', CategoryController::class);
+    Route::apiResource('items', ItemsController::class);
 });
